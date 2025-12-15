@@ -12,7 +12,7 @@ st.title("📄 Extrator Previdenciário")
 
 modelo = st.selectbox(
     "📂 Modelo do PDF",
-    ["Selecione...", "INSS – CTC / CNIS", "Prefeitura Municipal de Florianópolis"]
+    ["Selecione...", "INSS – CTC", "Prefeitura Municipal de Florianópolis"]
 )
 
 pdf_file = None
@@ -133,7 +133,7 @@ def extrair_prefeitura(pdf):
 # -------------------------------------------------
 if pdf_file:
 
-    if modelo == "INSS – CTC / CNIS":
+    if modelo == "INSS – CTC":
         df_sal = extrair_salarios_inss(pdf_file)
         df_tmp = extrair_tempo_inss(pdf_file)
 
@@ -182,3 +182,4 @@ st.warning(
     "Diferenças de layout podem gerar erros. "
     "**Sempre confira os dados com o documento original.**"
 )
+
